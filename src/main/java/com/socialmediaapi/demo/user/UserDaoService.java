@@ -31,4 +31,8 @@ import java.util.List;
     public User findUser(Integer id) {
          return users.stream().filter(user -> user.getId().equals(id)).findFirst().orElse(null);
     }
+
+    public void deleteUserById(Integer id) {
+        users.removeIf(user -> user.getId().equals(id));
+    }
 }

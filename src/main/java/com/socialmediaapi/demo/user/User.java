@@ -1,12 +1,15 @@
 package com.socialmediaapi.demo.user;
 
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class User {
 
     private Integer id;
-    private String name;
-    private LocalDate birthDate;
+    @Size(min=2, message = "Name should have atleast 2 chars") private String name;
+    @Past private LocalDate birthDate;
 
     public User(Integer id, String name, LocalDate birthDate) {
         this.id = id;
